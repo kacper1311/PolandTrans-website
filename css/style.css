@@ -1,0 +1,807 @@
+/* ========================================
+   POLANDTRANS - GŁÓWNY PLIK STYLÓW CSS
+   ======================================== */
+/* Ten plik zawiera wszystkie style dla strony PolandTrans
+   Wszystkie sekcje są szczegółowo opisane dla celów edukacyjnych */
+
+/* ========================================
+   ZMIENNE CSS (CUSTOM PROPERTIES) - PALETA KOLORÓW
+   ======================================== */
+/* Zmienne CSS pozwalają na łatwe zarządzanie kolorami w całej stronie
+   Wystarczy zmienić wartość w jednym miejscu, aby zaktualizować całą stronę */
+:root {
+    --primary-red: #dc3545;        /* Główny czerwony z logo - używany dla przycisków i akcentów */
+    --primary-red-dark: #c82333;   /* Ciemniejszy odcień czerwonego - dla efektów hover */
+    --primary-red-light: #f8d7da;  /* Jasny odcień czerwonego - dla tła sekcji */
+    --secondary-gray: #6c757d;     /* Szary dla tekstów pomocniczych i opisów */
+    --dark-gray: #343a40;          /* Ciemny szary dla głównych nagłówków */
+    --light-gray: #f8f9fa;         /* Jasny szary dla tła sekcji */
+    --white: #ffffff;              /* Biały - główne tło */
+    --text-dark: #2c3e50;          /* Ciemny tekst - główny kolor tekstu */
+}
+
+/* ========================================
+   RESET I PODSTAWOWE STYLE - CZYŚCIMY DOMYŚLNE STYLE
+   ======================================== */
+/* Reset CSS usuwa domyślne style przeglądarki, żeby strona wyglądała
+   tak samo we wszystkich przeglądarkach */
+* {
+    margin: 0;                     /* Usuwamy domyślne marginesy */
+    padding: 0;                    /* Usuwamy domyślne paddingi */
+    box-sizing: border-box;        /* Padding i border wliczają się w szerokość elementu */
+}
+
+/* ========================================
+   STYLE CIAŁA STRONY - PODSTAWOWE USTAWIENIA
+   ======================================== */
+body {
+    font-family: 'Inter', sans-serif; /* Inter - nowoczesna czcionka dla tekstu */
+    line-height: 1.6;              /* Wysokość linii - poprawia czytelność */
+    color: var(--text-dark);       /* Kolor tekstu z naszej palety */
+    background-color: var(--white); /* Białe tło strony */
+    overflow-x: hidden;            /* Zapobiega poziomemu przewijaniu */
+}
+
+/* ========================================
+   STYLE NAGŁÓWKÓW - HIERARCHIA TEKSTU
+   ======================================== */
+/* Wszystkie nagłówki używają Poppins dla charakteru i wyróżnienia */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Poppins - bardziej charakterystyczna czcionka */
+    font-weight: 600;              /* Półgruba waga - lepsza czytelność */
+    line-height: 1.2;              /* Mniejsza wysokość linii dla nagłówków */
+    margin-bottom: 1rem;           /* Odstęp pod nagłówkiem */
+}
+
+/* ========================================
+   NAWIGACJA - MENU GÓRNE STRONY
+   ======================================== */
+/* Navbar - główne menu nawigacyjne */
+.navbar {
+    background-color: var(--white) !important; /* Białe tło menu */
+    box-shadow: 0 2px 10px rgba(220, 53, 69, 0.1); /* Subtelny czerwony cień */
+    padding: 1rem 0;               /* Wewnętrzny odstęp góra-dół */
+    position: sticky;              /* Menu "przykleja się" do góry podczas przewijania */
+    top: 0;                        /* Pozycja na górze ekranu */
+    z-index: 1000;                 /* Wysoki z-index - menu nad innymi elementami */
+}
+
+/* Logo firmy w nawigacji */
+.navbar-brand {
+    display: flex;                 /* Flexbox dla wycentrowania logo */
+    align-items: center;           /* Wycentrowanie w pionie */
+}
+
+.navbar-brand .logo {
+    height: 120px;                 /* Wysokość logo */
+    width: auto;                   /* Szerokość automatyczna - zachowuje proporcje */
+    transition: transform 0.3s ease; /* Animacja przy hover */
+}
+
+.navbar-brand .logo:hover {
+    transform: scale(1.05);        /* Lekkie powiększenie przy hover */
+}
+
+/* Linki w menu nawigacyjnym */
+.navbar-nav .nav-link {
+    color: var(--text-dark) !important; /* Kolor tekstu linków */
+    font-weight: 500;              /* Średnia waga czcionki */
+    font-size: 1rem;               /* Rozmiar czcionki */
+    margin: 0 0.5rem;              /* Odstępy między linkami */
+    padding: 0.5rem 1rem !important; /* Wewnętrzny odstęp */
+    border-radius: 25px;           /* Zaokrąglone rogi - nowoczesny wygląd */
+    transition: all 0.3s ease;     /* Płynna animacja wszystkich zmian */
+    position: relative;            /* Pozycja względna dla efektów */
+}
+
+/* Efekt hover dla linków nawigacji */
+.navbar-nav .nav-link:hover {
+    background-color: var(--primary-red); /* Czerwone tło przy hover */
+    color: var(--white) !important; /* Biały tekst przy hover */
+    transform: translateY(-2px);   /* Subtelne uniesienie */
+    text-decoration: none;         /* Usuwamy podkreślenie */
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2); /* Cień przy hover */
+}
+
+/* Aktywny link w nawigacji */
+.navbar-nav .nav-link.active {
+    background-color: var(--primary-red);
+    color: var(--white) !important;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* ========================================
+   SEKCJA HERO - GŁÓWNY BANER STRONY
+   ======================================== */
+/* Hero section - pierwsza sekcja widoczna po załadowaniu strony */
+.hero-section {
+    background-image: url('../assets/images/background.jpg'); /* Tło z obrazu */
+    background-size: cover;        /* Obraz pokrywa całą sekcję */
+    background-position: center;   /* Obraz wycentrowany */
+    background-repeat: no-repeat;  /* Obraz się nie powtarza */
+    background-attachment: fixed;  /* Efekt parallax - tło się nie rusza */
+    min-height: 70vh;              /* Minimalna wysokość 70% ekranu */
+    color: var(--white);           /* Biały tekst na ciemnym tle */
+    position: relative;            /* Pozycja względna dla nakładek */
+    overflow: hidden;              /* Ukrywa elementy wychodzące poza sekcję */
+    height: 1000px;                /* Stała wysokość sekcji */
+    display: flex;                 /* Flexbox dla wycentrowania treści */
+    align-items: center;           /* Wycentrowanie w pionie */
+}
+
+/* Nakładka na tło - poprawia czytelność tekstu */
+.hero-section::before {
+    content: '';                   /* Pusty element */
+    position: absolute;            /* Pozycja absolutna */
+    top: 0;                        /* Od góry */
+    left: 0;                       /* Od lewej */
+    right: 0;                      /* Od prawej */
+    bottom: 0;                     /* Od dołu */
+    background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%); /* Gradient */
+    z-index: 1;                    /* Nad tłem, pod treścią */
+}
+
+/* Kontener z treścią w hero */
+.hero-section .container {
+    position: relative;            /* Pozycja względna */
+    z-index: 2;                    /* Nad nakładką */
+    text-align: center;            /* Wycentrowanie tekstu */
+}
+
+/* Główny nagłówek w hero */
+.hero-section h1 {
+    font-size: 3.5rem;             /* Duży rozmiar czcionki */
+    font-weight: 700;              /* Gruba waga czcionki */
+    margin-bottom: 1.5rem;         /* Odstęp pod nagłówkiem */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Cień tekstu */
+    animation: fadeInUp 1s ease-out; /* Animacja pojawienia się */
+}
+
+/* Animacja dla nagłówka */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Przycisk w hero */
+.hero-section .btn-primary {
+    background-color: var(--primary-red); /* Czerwone tło */
+    border: none;                  /* Bez ramki */
+    font-size: 1.1em;              /* Rozmiar czcionki */
+    font-weight: bold;             /* Gruba czcionka */
+    padding: 16px 32px;            /* Wewnętrzny odstęp */
+    transition: all 0.3s ease;     /* Płynna animacja */
+    border-radius: 32px;           /* Zaokrąglone rogi */
+    box-shadow: 0 10px 30px rgba(220, 53, 69, 0.2); /* Cień */
+    cursor: pointer;               /* Kursor pointer */
+    text-decoration: none;         /* Bez podkreślenia */
+    display: inline-block;         /* Element blokowy inline */
+}
+
+/* Efekt hover dla przycisku */
+.hero-section .btn-primary:hover,
+.hero-section .btn-primary:active {
+    background-color: var(--primary-red-dark) !important; /* Ciemniejszy czerwony */
+    text-decoration: none;         /* Bez podkreślenia */
+    box-shadow: 0 15px 40px rgba(220, 53, 69, 0.3); /* Większy cień */
+    transform: translateY(-2px);   /* Uniesienie przycisku */
+}
+
+/* Focus dla przycisku (dostępność) */
+.hero-section .btn-primary:focus {
+    background-color: var(--primary-red-dark) !important;
+    outline: 3px solid rgba(255,255,255,0.5); /* Biała ramka focus */
+    outline-offset: 2px;           /* Odstęp ramki */
+}
+
+/* Podtytuł w hero */
+.hero-section .lead {
+    font-size: 1.3rem;             /* Rozmiar czcionki */
+    font-weight: 400;              /* Normalna waga */
+    margin-bottom: 3rem;           /* Odstęp pod tekstem */
+    opacity: 0.95;                 /* Lekka przezroczystość */
+    animation: fadeInUp 1s ease-out 0.3s both; /* Animacja z opóźnieniem */
+}
+
+/* ========================================
+   SEKCJA USŁUG - KARTY Z OBRAZKAMI
+   ======================================== */
+/* Sekcja usług - prezentacja oferty firmy */
+.services-section {
+    padding: 100px 0;              /* Duży odstęp góra-dół */
+    background: linear-gradient(135deg, var(--light-gray) 0%, #e9ecef 100%); /* Gradient tła */
+    position: relative;            /* Pozycja względna */
+}
+
+/* Nagłówek sekcji */
+.section-header {
+    margin-bottom: 75px;           /* Odstęp pod nagłówkiem */
+    text-align: center;            /* Wycentrowanie */
+}
+
+/* Tytuł sekcji */
+.section-title {
+    font-size: 2.8rem;             /* Rozmiar czcionki */
+    font-weight: 700;              /* Gruba waga */
+    color: var(--text-dark);       /* Kolor tekstu */
+    margin-bottom: 20px;           /* Odstęp pod tytułem */
+    position: relative;            /* Pozycja względna dla dekoracji */
+    padding: 5px;                  /* Wewnętrzny odstęp */
+}
+
+/* Czerwona linia pod tytułem */
+.section-title::after {
+    content: '';                   /* Pusty element */
+    position: absolute;            /* Pozycja absolutna */
+    bottom: -10px;                 /* 10px pod tytułem */
+    left: 50%;                     /* Od lewej 50% */
+    transform: translateX(-50%);   /* Wycentrowanie */
+    width: 80px;                   /* Szerokość linii */
+    height: 4px;                   /* Wysokość linii */
+    background: linear-gradient(90deg, var(--primary-red), var(--primary-red-dark)); /* Gradient */
+    border-radius: 2px;            /* Zaokrąglone rogi */
+}
+
+/* Podtytuł sekcji */
+.section-subtitle {
+    font-size: 1.2rem;             /* Rozmiar czcionki */
+    color: var(--secondary-gray);  /* Kolor tekstu */
+    font-weight: 400;              /* Normalna waga */
+    margin-top: 25px;              /* Odstęp nad podtytułem */
+    max-width: 600px;              /* Maksymalna szerokość */
+    margin-left: auto;             /* Wycentrowanie */
+    margin-right: auto;            /* Wycentrowanie */
+}
+
+/* Karty usług */
+.service-card {
+    background: var(--white);      /* Białe tło */
+    border-radius: 16px;           /* Zaokrąglone rogi */
+    overflow: hidden;              /* Ukrywa elementy wychodzące poza kartę */
+    box-shadow: 0 10px 30px rgba(220, 53, 69, 0.08); /* Subtelny czerwony cień */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Płynna animacja */
+    height: 100%;                  /* Pełna wysokość */
+    border: 1px solid rgba(220, 53, 69, 0.1); /* Subtelna ramka */
+    position: relative;            /* Pozycja względna */
+}
+
+/* Efekt hover dla kart */
+.service-card:hover {
+    transform: translateY(-12px);  /* Uniesienie karty */
+    box-shadow: 0 25px 50px rgba(220, 53, 69, 0.15); /* Większy cień */
+}
+
+/* Kontener na zdjęcie w karcie */
+.service-image-wrapper {
+    position: relative;            /* Pozycja względna */
+    height: 250px;                 /* Stała wysokość */
+    overflow: hidden;              /* Ukrywa części obrazu */
+}
+
+/* Obraz w karcie */
+.service-image {
+    width: 100%;                   /* Pełna szerokość */
+    height: 100%;                  /* Pełna wysokość */
+    object-fit: cover;             /* Obraz pokrywa cały kontener */
+    object-position: center;       /* Obraz wycentrowany */
+    transition: transform 0.6s ease; /* Animacja obrazu */
+}
+
+/* Efekt hover dla obrazu */
+.service-card:hover .service-image {
+    transform: scale(1.08);        /* Powiększenie obrazu */
+}
+
+/* Nakładka na obraz */
+.image-overlay {
+    position: absolute;            /* Pozycja absolutna */
+    top: 0;                        /* Od góry */
+    left: 0;                       /* Od lewej */
+    right: 0;                      /* Od prawej */
+    bottom: 0;                     /* Od dołu */
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%); /* Gradient */
+    opacity: 0;                    /* Przezroczysta */
+    transition: opacity 0.3s ease; /* Animacja przezroczystości */
+}
+
+/* Efekt hover dla nakładki */
+.service-card:hover .image-overlay {
+    opacity: 1;                    /* Widoczna nakładka */
+}
+
+/* Zawartość tekstowa karty */
+.service-content {
+    padding: 32px 28px;            /* Wewnętrzny odstęp */
+}
+
+/* Tytuł usługi */
+.service-title {
+    color: var(--text-dark);       /* Kolor tekstu */
+    font-size: 1.4rem;             /* Rozmiar czcionki */
+    font-weight: 600;              /* Półgruba waga */
+    margin-bottom: 16px;           /* Odstęp pod tytułem */
+}
+
+/* Opis usługi */
+.service-description {
+    color: var(--secondary-gray);  /* Kolor tekstu */
+    font-size: 1rem;               /* Rozmiar czcionki */
+    line-height: 1.7;              /* Wysokość linii */
+}
+
+/* ========================================
+   SEKCJA ZALET - DLACZEGO POLANDTRANS
+   ======================================== */
+/* Sekcja prezentująca zalety firmy */
+.advantages-section {
+    padding: 100px 0;              /* Duży odstęp góra-dół */
+    background-color: var(--white); /* Białe tło */
+    position: relative;            /* Pozycja względna */
+}
+
+/* Tytuł sekcji zalet */
+.advantages-section .section-title {
+    margin-bottom: 70px;           /* Odstęp pod tytułem */
+    text-align: center;            /* Wycentrowanie */
+}
+
+/* Element zalety */
+.advantage-item {
+    display: flex;                 /* Flexbox */
+    align-items: flex-start;       /* Wyrównanie do góry */
+    margin-bottom: 2rem;           /* Odstęp między elementami */
+    transition: transform 0.3s ease; /* Animacja */
+}
+
+/* Efekt hover dla elementów zalet */
+.advantage-item:hover {
+    transform: translateX(10px);   /* Przesunięcie w prawo */
+}
+
+/* Ikona zalety */
+.advantage-icon {
+    width: 60px;                   /* Szerokość ikony */
+    height: 60px;                  /* Wysokość ikony */
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark)); /* Gradient */
+    border-radius: 50%;            /* Okrągła ikona */
+    display: flex;                 /* Flexbox */
+    align-items: center;           /* Wycentrowanie w pionie */
+    justify-content: center;       /* Wycentrowanie w poziomie */
+    margin-right: 1.5rem;          /* Odstęp od tekstu */
+    flex-shrink: 0;                /* Nie zmniejsza się */
+    transition: transform 0.3s ease; /* Animacja */
+}
+
+/* Efekt hover dla ikony */
+.advantage-icon:hover {
+    transform: scale(1.1);         /* Powiększenie ikony */
+}
+
+/* Ikona FontAwesome w kółku */
+.advantage-icon i {
+    color: var(--white);           /* Biały kolor ikony */
+    font-size: 1.5rem;             /* Rozmiar ikony */
+}
+
+/* Zawartość tekstowa zalety */
+.advantage-content h4 {
+    color: var(--text-dark);       /* Kolor nagłówka */
+    font-size: 1.3rem;             /* Rozmiar czcionki */
+    font-weight: 600;              /* Półgruba waga */
+    margin-bottom: 0.5rem;         /* Odstęp pod nagłówkiem */
+}
+
+.advantage-content p {
+    color: var(--secondary-gray);  /* Kolor tekstu */
+    margin-bottom: 0;              /* Bez odstępu na dole */
+    line-height: 1.6;              /* Wysokość linii */
+}
+
+/* ========================================
+   SEKCJA KONTAKTU - NOWA WERSJA
+   ======================================== */
+/* Sekcja kontaktowa z mapą i danymi */
+.contact-section-new {
+    background-color: var(--white); /* Białe tło */
+    padding: 60px 0;               /* Odstęp góra-dół */
+    font-family: 'Inter', sans-serif; /* Czcionka */
+    margin-bottom: 80px;           /* Odstęp na dole */
+    position: relative;            /* Pozycja względna */
+}
+
+/* Główny kontener sekcji kontaktowej */
+.container-new {
+    max-width: 1100px;             /* Maksymalna szerokość */
+    margin: 0 auto;                /* Wycentrowanie */
+    display: flex;                 /* Flexbox */
+    align-items: center;           /* Wycentrowanie w pionie */
+    gap: 40px;                     /* Odstęp między elementami */
+    padding: 20px;                 /* Wewnętrzny odstęp */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Delikatny cień */
+    border-radius: 8px;            /* Zaokrąglone rogi */
+    background: var(--white);      /* Białe tło */
+}
+
+/* Kontener mapy */
+.map-container {
+    flex: 1;                       /* Zajmuje dostępną przestrzeń */
+    min-width: 300px;              /* Minimalna szerokość */
+    height: 400px;                 /* Stała wysokość */
+    border-radius: 8px;            /* Zaokrąglone rogi */
+    overflow: hidden;              /* Ukrywa elementy wychodzące */
+}
+
+/* Ramka mapy Google */
+.map-container iframe {
+    border-radius: 8px;            /* Zaokrąglone rogi */
+    width: 100%;                   /* Pełna szerokość */
+    height: 100%;                  /* Pełna wysokość */
+}
+
+/* Informacje kontaktowe */
+.contact-info {
+    flex: 1;                       /* Zajmuje dostępną przestrzeń */
+    min-width: 300px;              /* Minimalna szerokość */
+    padding: 20px;                 /* Wewnętrzny odstęp */
+}
+
+/* Nagłówek sekcji kontaktowej */
+.contact-info h2 {
+    font-size: 28px;               /* Rozmiar czcionki */
+    font-weight: bold;             /* Gruba waga */
+    margin-bottom: 15px;           /* Odstęp pod nagłówkiem */
+    color: var(--text-dark);       /* Kolor tekstu */
+}
+
+/* Opis w sekcji kontaktowej */
+.contact-info p {
+    font-size: 16px;               /* Rozmiar czcionki */
+    color: var(--secondary-gray);  /* Kolor tekstu */
+    line-height: 1.6;              /* Wysokość linii */
+    margin-bottom: 30px;           /* Odstęp pod opisem */
+}
+
+/* Lista kontaktowa */
+.contact-list-styled {
+    list-style: none;              /* Bez kropek */
+    padding: 20px;                 /* Wewnętrzny odstęp */
+    margin: 0;                     /* Bez marginesów */
+    border-radius: 5px;            /* Zaokrąglone rogi */
+    font-family: 'Inter', sans-serif; /* Czcionka */
+}
+
+/* Element listy kontaktowej */
+.contact-list-styled li {
+    display: flex;                 /* Flexbox */
+    align-items: center;           /* Wyrównanie w pionie */
+    margin-bottom: 15px;           /* Odstęp między elementami */
+    transition: transform 0.3s ease; /* Animacja */
+}
+
+/* Efekt hover dla elementów listy */
+.contact-list-styled li:hover {
+    transform: translateX(5px);    /* Przesunięcie w prawo */
+}
+
+/* Ostatni element listy */
+.contact-list-styled li:last-child {
+    margin-bottom: 0;              /* Bez odstępu na dole */
+}
+
+/* Ikony w liście kontaktowej */
+.contact-list-styled i {
+    color: var(--primary-red);     /* Czerwony kolor ikon */
+    font-size: 16px;               /* Rozmiar ikony */
+    width: 25px;                   /* Stała szerokość */
+    margin-right: 10px;            /* Odstęp od tekstu */
+    text-align: center;            /* Wycentrowanie ikony */
+}
+
+/* Linki w liście kontaktowej */
+.contact-list-styled a {
+    color: var(--text-dark);       /* Kolor tekstu */
+    text-decoration: none;         /* Bez podkreślenia */
+    font-size: 16px;               /* Rozmiar czcionki */
+    font-weight: 500;              /* Półgruba waga */
+    transition: color 0.3s ease;   /* Animacja koloru */
+}
+
+/* Efekt hover dla linków */
+.contact-list-styled a:hover {
+    color: var(--primary-red);     /* Czerwony kolor przy hover */
+    text-decoration: underline;    /* Podkreślenie przy hover */
+}
+
+/* ========================================
+   STOPKA - DOLNA CZĘŚĆ STRONY
+   ======================================== */
+/* Stopka strony */
+footer {
+    background: #222;              /* Ciemne tło */
+    color: var(--white);           /* Biały tekst */
+    position: relative;            /* Pozycja względna */
+}
+
+/* Media społecznościowe w stopce */
+.social-media {
+    display: flex;                 /* Flexbox */
+    justify-content: flex-end;     /* Wyrównanie do prawej */
+    align-items: center;           /* Wycentrowanie w pionie */
+    height: 100%;                  /* Pełna wysokość */
+    gap: 15px;                     /* Odstęp między ikonami */
+}
+
+/* Linki social media */
+.social-media a {
+    color: var(--white);           /* Biały kolor */
+    font-size: 1.2rem;             /* Mniejszy rozmiar ikon (było 1.5rem) */
+    margin: 0 8px;                 /* Odstęp między linkami */
+    transition: all 0.3s ease;     /* Płynna animacja */
+    display: flex;                 /* Flexbox */
+    align-items: center;           /* Wycentrowanie */
+    justify-content: center;       /* Wycentrowanie */
+    width: 40px;                   /* Stała szerokość */
+    height: 40px;                  /* Stała wysokość */
+    border-radius: 50%;            /* Okrągły kształt */
+    background: rgba(255,255,255,0.1); /* Subtelne tło */
+    text-decoration: none;
+}
+
+/* Efekt hover dla linków social media */
+.social-media a:hover {
+    color: var(--primary-red);     /* Czerwony kolor przy hover */
+    background: rgba(255,255,255,0.2); /* Jaśniejsze tło */
+    transform: translateY(-2px);   /* Uniesienie */
+    text-decoration: none;         /* Bez podkreślenia */
+}
+
+/* ========================================
+   RESPONSYWNOŚĆ - DOSTOSOWANIE DO RÓŻNYCH EKRANÓW
+   ======================================== */
+/* Tablet - ekrany do 992px */
+@media (max-width: 992px) {
+    .services-section {
+        padding: 80px 0;           /* Mniejszy odstęp */
+    }
+    
+    .section-title {
+        font-size: 2.2rem;         /* Mniejszy tytuł */
+    }
+    
+    .service-image-wrapper {
+        height: 220px;             /* Mniejsza wysokość obrazów */
+    }
+    
+    .hero-section h1 {
+        font-size: 2.8rem;         /* Mniejszy nagłówek */
+    }
+    
+    .navbar-brand .logo {
+        height: 100px;             /* Mniejsze logo */
+    }
+}
+
+/* Mobile - ekrany do 768px */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;           /* Jeszcze mniejszy nagłówek */
+    }
+    
+    h2 {
+        font-size: 2rem;           /* Mniejszy nagłówek h2 */
+    }
+    
+    .service-card, 
+    .service-grid-card {
+        padding: 18px 8px;         /* Mniejszy padding */
+    }
+    
+    .services-section, 
+    .services-grid-section, 
+    .contact-section,
+    .advantages-section {
+        padding: 60px 0;           /* Mniejszy odstęp */
+    }
+    
+    .section-title {
+        font-size: 2rem;           /* Mniejszy tytuł sekcji */
+    }
+    
+    .service-content {
+        padding: 24px 20px;        /* Mniejszy padding */
+    }
+    
+    .service-image-wrapper {
+        height: 200px;             /* Mniejsza wysokość obrazów */
+    }
+    
+    .section-header {
+        margin-bottom: 40px;       /* Mniejszy odstęp */
+    }
+    
+    .advantage-item {
+        flex-direction: column;    /* Układ pionowy */
+        text-align: center;        /* Wycentrowanie */
+    }
+    
+    .advantage-icon {
+        margin-right: 0;           /* Bez odstępu z prawej */
+        margin-bottom: 1rem;       /* Odstęp z dołu */
+        align-self: center;        /* Wycentrowanie ikony w pionie */
+        justify-self: center;      /* Wycentrowanie ikony w poziomie */
+    }
+
+    
+    .social-media {
+        justify-content: center;   /* Wycentrowanie */
+        margin-top: 1rem;          /* Odstęp z góry */
+    }
+    
+    /* Responsywność dla sekcji kontaktowej */
+    .container-new {
+        flex-direction: column;    /* Układ pionowy */
+        gap: 20px;                 /* Mniejszy odstęp */
+    }
+
+    .map-container {
+        width: 100%;               /* Pełna szerokość */
+        height: 300px;             /* Mniejsza wysokość */
+    }
+    
+    .contact-info {
+        text-align: center;        /* Wycentrowanie tekstu */
+    }
+    
+    /* Mniejsze ikony social media na mobile */
+    .social-media a {
+        font-size: 1rem;           /* Jeszcze mniejsze ikony */
+        width: 35px;               /* Mniejsza szerokość */
+        height: 35px;              /* Mniejsza wysokość */
+    }
+}
+
+/* Małe mobile - ekrany do 576px */
+@media (max-width: 576px) {
+    .hero-section {
+        height: 80vh;              /* Mniejsza wysokość hero */
+        min-height: 500px;         /* Minimalna wysokość */
+    }
+    
+    .hero-section h1 {
+        font-size: 1.8rem;         /* Jeszcze mniejszy nagłówek */
+    }
+    
+    .hero-section .lead {
+        font-size: 1.1rem;         /* Mniejszy podtytuł */
+    }
+    
+    .section-title {
+        font-size: 1.8rem;         /* Mniejszy tytuł */
+    }
+    
+    .navbar-brand .logo {
+        height: 80px;              /* Jeszcze mniejsze logo */
+    }
+    
+    /* Bardzo małe ikony social media */
+    .social-media a {
+        font-size: 0.9rem;         /* Najmniejsze ikony */
+        width: 30px;               /* Najmniejsza szerokość */
+        height: 30px;              /* Najmniejsza wysokość */
+        margin: 0 4px;             /* Mniejszy odstęp */
+    }
+}
+
+/* ========================================
+   ANIMACJE I EFEKTY - DODATKOWE ULEPSZENIA
+   ======================================== */
+/* Animacja pojawienia się elementów */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animacja dla kart usług */
+.service-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Animacja dla elementów zalet */
+.advantage-item {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Animacja dla przycisku "Powrót do góry" */
+.back-to-top {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* ========================================
+   DOSTĘPNOŚĆ - WCAG COMPLIANCE
+   ======================================== */
+/* Focus indicator dla wszystkich interaktywnych elementów */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--primary-red);
+    outline-offset: 2px;
+}
+
+/* Wysoki kontrast dla tekstu */
+@media (prefers-contrast: high) {
+    :root {
+        --text-dark: #000000;
+        --secondary-gray: #333333;
+    }
+}
+
+/* Redukcja animacji dla użytkowników z preferencjami */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ========================================
+   OPTYMALIZACJA WYDAJNOŚCI
+   ======================================== */
+/* Używanie transform zamiast top/left dla lepszej wydajności */
+.service-card:hover {
+    transform: translateY(-12px) scale(1.02);
+}
+
+/* Hardware acceleration dla animacji */
+.hero-section,
+.service-card,
+.advantage-item {
+    will-change: transform;
+}
+
+/* Optymalizacja dla obrazów */
+.service-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* ========================================
+   PRINT STYLES - STYLE DO DRUKOWANIA
+   ======================================== */
+@media print {
+    .navbar,
+    .hero-section,
+    .social-media,
+    .back-to-top {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000;
+        background: #fff;
+    }
+    
+    .service-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}

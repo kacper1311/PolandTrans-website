@@ -1,0 +1,45 @@
+# ========================================
+# POLANDTRANS - PLIK ROBOTS.TXT
+# ========================================
+# Ten plik zawiera instrukcje dla robotów wyszukiwarek
+# Określa, które części strony mogą być indeksowane
+
+# Zezwalamy wszystkim robotom na dostęp do całej strony
+User-agent: *
+Allow: /
+
+# Blokujemy dostęp do plików systemowych i tymczasowych
+Disallow: /.DS_Store
+Disallow: /Thumbs.db
+Disallow: /desktop.ini
+Disallow: /~*
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /tmp/
+
+# Blokujemy dostęp do plików z rozszerzeniami, które nie powinny być indeksowane
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+Disallow: /*.ppt$
+Disallow: /*.pptx$
+Disallow: /*.zip$
+Disallow: /*.rar$
+Disallow: /*.tar$
+Disallow: /*.gz$
+
+# Blokujemy parametry URL, które mogą powodować duplikację treści
+Disallow: /*?utm_source=
+Disallow: /*?utm_medium=
+Disallow: /*?utm_campaign=
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
+
+# Lokalizacja pliku sitemap.xml
+Sitemap: https://polandtrans.pl/sitemap.xml
+
+# Czas oczekiwania między requestami (w sekundach)
+Crawl-delay: 1 

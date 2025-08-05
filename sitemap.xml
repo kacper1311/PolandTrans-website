@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ========================================
+     POLANDTRANS - SITEMAP.XML
+     ======================================== -->
+<!-- Ten plik zawiera mapę strony dla wyszukiwarek -->
+<!-- Pomaga robotom wyszukiwarek zrozumieć strukturę strony -->
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Strona główna -->
+    <url>
+        <loc>https://polandtrans.pl/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <!-- Alternatywne wersje językowe -->
+        <xhtml:link rel="alternate" hreflang="pl" href="https://polandtrans.pl/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://polandtrans.pl/en/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://polandtrans.pl/de/"/>
+    </url>
+    
+    <!-- Sekcja usług -->
+    <url>
+        <loc>https://polandtrans.pl/#uslugi</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Sekcja kontakt -->
+    <url>
+        <loc>https://polandtrans.pl/#kontakt</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Wersja angielska -->
+    <url>
+        <loc>https://polandtrans.pl/en/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Wersja niemiecka -->
+    <url>
+        <loc>https://polandtrans.pl/de/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Strona o firmie (przyszłość) -->
+    <url>
+        <loc>https://polandtrans.pl/o-nas</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Strona z ofertą (przyszłość) -->
+    <url>
+        <loc>https://polandtrans.pl/oferta</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Strona kontaktowa (przyszłość) -->
+    <url>
+        <loc>https://polandtrans.pl/kontakt</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Polityka prywatności (przyszłość) -->
+    <url>
+        <loc>https://polandtrans.pl/polityka-prywatnosci</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- Regulamin (przyszłość) -->
+    <url>
+        <loc>https://polandtrans.pl/regulamin</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+</urlset> 
