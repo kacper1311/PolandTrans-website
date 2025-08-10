@@ -1,136 +1,74 @@
-# 🚛 PolandTrans - Profesjonalny Transport i Spedycja
+🚛 PolandTrans – Strona ćwiczebna / Practice Project
+Demo: polandtrans.netlify.app
 
-## 🔗Link do strony:
-https://polandtrans.netlify.app/
+🇵🇱 Wersja polska
+Opis:
+Projekt stworzony w celach edukacyjnych – jako ćwiczenie HTML, CSS, JavaScript i dobrych praktyk web developmentu. Strona imituje witrynę firmy transportowej i jest zoptymalizowana pod SEO, wydajność oraz dostępność.
 
-## 📋 Opis projektu
+Czego się nauczyłem:
 
-PolandTrans to nowoczesna strona internetowa firmy transportowej, zoptymalizowana pod kątem SEO, wydajności i najlepszych praktyk web developmentu. Strona prezentuje kompleksowe usługi transportowe, spedycję krajową i międzynarodową oraz magazynowanie.
+Tworzenia responsywnych layoutów w podejściu mobile-first
 
-## ✨ Funkcjonalności
+Dodawania meta tagów i danych strukturalnych JSON-LD
 
-### 🎯 SEO i Optymalizacja
-- **Kompletne meta tagi** - Open Graph, Twitter Cards, dane strukturalne
-- **Dane strukturalne JSON-LD** - dla lepszego zrozumienia przez wyszukiwarki
-- **Optymalizacja obrazów** - lazy loading, WebP format
-- **Sitemap.xml** - mapa strony dla wyszukiwarek
-- **Robots.txt** - instrukcje dla robotów wyszukiwarek
-- **Nagłówki bezpieczeństwa** - XSS, clickjacking, MIME sniffing
+Optymalizacji obrazów (lazy loading, WebP)
 
-### 🚀 Wydajność
-- **Kompresja GZIP** - szybsze ładowanie
-- **Cache headers** - optymalne czasy cache
-- **Lazy loading** - obrazy ładują się na żądanie
-- **Preload zasobów** - krytyczne zasoby ładowane wcześniej
-- **Optymalizacja CSS/JS** - minifikacja i kompresja
+Konfiguracji sitemap.xml i robots.txt
 
-### ♿ Dostępność (Accessibility)
-- **ARIA labels** - dla czytników ekranu
-- **Semantyczny HTML** - prawidłowa struktura
-- **Obsługa klawiatury** - pełna nawigacja klawiaturą
-- **Wysoki kontrast** - zgodność z WCAG
-- **Redukcja animacji** - dla użytkowników z preferencjami
+Dodawania nagłówków bezpieczeństwa w .htaccess
 
-### 📱 Responsywność
-- **Mobile-first design** - optymalizacja dla urządzeń mobilnych
-- **Flexbox i Grid** - nowoczesne layouty
-- **Breakpointy** - 992px, 768px, 576px
-- **Touch-friendly** - przyjazne dla dotyku
+Technologie:
+HTML5 • CSS3 • JavaScript (ES6+) • Bootstrap 5.3.3 • Font Awesome • Google Fonts
 
-## 🛠️ Technologie
+Struktura projektu:
 
-### Frontend
-- **HTML5** - semantyczna struktura
-- **CSS3** - nowoczesne style z Custom Properties
-- **JavaScript (ES6+)** - interaktywność
-- **Bootstrap 5.3.3** - framework CSS
-- **Font Awesome 6** - ikony
-
-### Optymalizacja
-- **Google Fonts** - Inter i Poppins
-- **CDN** - szybkie ładowanie zasobów
-- **GZIP compression** - kompresja plików
-
-## 📁 Struktura projektu
-
-```
+bash
+Copy
+Edit
 PolandTrans/
-├── index.html              # Główna strona
-├── css/
-│   └── style.css           # Style CSS
-├── js/
-│   └── script.js           # JavaScript
-├── assets/
-│   ├── images/             # Obrazy
-│   └── icons/              # Ikony
-├── robots.txt              # Instrukcje dla robotów
-├── sitemap.xml             # Mapa strony
-├── .htaccess               # Konfiguracja Apache
-└── README.md               # Dokumentacja
-```
+├── index.html
+├── css/style.css
+├── js/script.js
+├── assets/images/
+├── assets/icons/
+├── robots.txt
+├── sitemap.xml
+├── .htaccess
+└── README.md
+📌 Uwaga: To nie jest prawdziwa strona firmy transportowej – projekt ma wyłącznie charakter edukacyjny.
 
-## 🔧 Konfiguracja
+🇬🇧 English version
+Description:
+This is an educational project – a practice exercise in HTML, CSS, JavaScript, and modern web development best practices. The website simulates a transportation company and is optimized for SEO, performance, and accessibility.
 
-### Breakpointy responsywne
-```css
-/* Tablet */
-@media (max-width: 992px) { ... }
+What I learned:
 
-/* Mobile */
-@media (max-width: 768px) { ... }
+Creating responsive layouts using the mobile-first approach
 
-/* Małe mobile */
-@media (max-width: 576px) { ... }
-```
+Adding meta tags and JSON-LD structured data
 
-## 📈 SEO
+Optimizing images (lazy loading, WebP)
 
-### Meta tagi
-- **Title**: Zoptymalizowany pod kątem słów kluczowych
-- **Description**: Atrakcyjny opis dla wyników wyszukiwania
-- **Keywords**: Słowa kluczowe branży transportowej
-- **Open Graph**: Dla mediów społecznościowych
-- **Twitter Cards**: Dla Twittera
+Configuring sitemap.xml and robots.txt
 
-### Dane strukturalne
-- **TransportationCompany** - schemat dla firmy transportowej
-- **PostalAddress** - adres firmy
-- **GeoCoordinates** - współrzędne geograficzne
-- **OfferCatalog** - katalog usług
+Setting up security headers in .htaccess
 
-### Lokalne SEO
-- **Geo meta tagi** - lokalizacja w Warszawie
-- **Hreflang** - wersje językowe (PL, EN, DE)
-- **Canonical URL** - zapobiega duplikacji
+Technologies:
+HTML5 • CSS3 • JavaScript (ES6+) • Bootstrap 5.3.3 • Font Awesome • Google Fonts
 
-## 🔒 Bezpieczeństwo
+Project structure:
 
-### Nagłówki HTTP
-- **X-XSS-Protection** - ochrona przed XSS
-- **X-Frame-Options** - ochrona przed clickjacking
-- **X-Content-Type-Options** - ochrona przed MIME sniffing
-- **Content-Security-Policy** - polityka bezpieczeństwa treści
-
-### Ochrona plików
-- Blokowanie dostępu do `.htaccess`, `.htpasswd`
-- Ochrona przed hotlinking obrazów
-- Blokowanie złośliwych botów
-
-## 📱 Responsywność
-
-### Mobile-first approach
-- Design zaczyna się od urządzeń mobilnych
-- Stopniowe dodawanie funkcjonalności dla większych ekranów
-- Touch-friendly interfejs
-
-### Breakpointy
-- **576px** - Małe telefony
-- **768px** - Telefony i tablety
-- **992px** - Tablety i małe laptopy
-- **1200px+** - Duże ekrany
-
-© 2025 PolandTrans. Wszelkie prawa zastrzeżone.
-
----
-
-**PolandTrans** - Twój ładunek. Nasza odpowiedzialność. 🚛 
+bash
+Copy
+Edit
+PolandTrans/
+├── index.html
+├── css/style.css
+├── js/script.js
+├── assets/images/
+├── assets/icons/
+├── robots.txt
+├── sitemap.xml
+├── .htaccess
+└── README.md
+📌 Note: This is not a real transportation company website – it was created purely for learning purposes.
