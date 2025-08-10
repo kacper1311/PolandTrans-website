@@ -1,7 +1,3 @@
-Jasne — zrobię ci dwie wersje w jednym README: najpierw polską, potem angielską, żeby każdy odwiedzający repo wiedział, że to projekt ćwiczebny, a jednocześnie widział, jakie umiejętności ćwiczyłeś.
-
----
-
 # 🚛 PolandTrans – Strona ćwiczebna / Practice Project
 
 **Demo:** [polandtrans.netlify.app](https://polandtrans.netlify.app/)
@@ -75,8 +71,3 @@ PolandTrans/
 ```
 
 📌 **Note:** This is not a real transportation company website – it was created purely for learning purposes.
-
----
-
-Chcesz, żebym ci jeszcze dorzucił **sekcję “Next steps”** w obu językach, żeby pokazać na GitHubie, jak planujesz rozwijać kolejne projekty?
-To fajnie wygląda w portfolio.
